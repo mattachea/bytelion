@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_072608) do
     t.text "name"
     t.text "description"
     t.text "price"
-    t.text "sizes"
+    t.text "sizes", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,67 +1,55 @@
 class BackscratchersController < ApplicationController
-  before_action :set_backscratcher, only: %i[ show edit update destroy ]
+     def index
+        @backscratchers = Backscratcher.select(:id, :name, :description, :price, :sizes)
+        render json: @backscratchers
+    end
 
-  # GET /backscratchers
-  def index
-    @backscratchers = Backscratcher.all
-  end
+    def show   
+        @backscratcher = Backscratcher.select(:id, :name, :description, :price, :sizes).find(params[:id])
+        render json: @backscratcher
+    end   
 
-  # GET /backscratchers/1
-  def show
-  end
+    def new
+        @backscratcher = Backscratcher.new
+    end
 
-  # GET /backscratchers/new
-  def new
-    @backscratcher = Backscratcher.new
-  end
+    def create
+        @backscratcher = Backscratcher.new(backscratcher_params)
 
-  # GET /backscratchers/1/edit
-  def edit
-  end
+        if @backscratcher.save
+            render json: @backscratcher
+        else
+            render error: {error: 'Failed to add backscratcher record'}, status: 400
+        end
+    end
 
-  # POST /backscratchers
-  def create
-    @backscratcher = Backscratcher.new(backscratcher_params)
 
-    respond_to do |format|
-      if @backscratcher.save
-        format.html { redirect_to @backscratcher, notice: "Backscratcher was successfully created." }
-        format.json { render :show, status: :created, location: @backscratcher }
+    def edit
+        @backscratcher = Backscratcher.find(params[:id])
+    end
+    
+
+    def update
+        @backscratcher = Backscratcher.find(params[:id])
+        if @backscratcher.update(backscratcher_params)
+            render json: @backscratcher
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @backscratcher.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
     end
-  end
+    
 
-  # PATCH/PUT /backscratchers/1
-  def update
-    respond_to do |format|
-      if @backscratcher.update(backscratcher_params)
-        format.html { redirect_to @backscratcher, notice: "Backscratcher was successfully updated." }
-        format.json { render :show, status: :ok, location: @backscratcher }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @backscratcher.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /backscratchers/1
-  def destroy
-    @backscratcher.destroy
-    respond_to do |format|
-      format.html { redirect_to backscratchers_url, notice: "Backscratcher was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    def set_backscratcher
-      @backscratcher = Backscratcher.find(params[:id])
+    def destroy
+        @backscratcher = Backscratcher.find(params[:id])
+        if @backscratcher.destroy
+            render json: @backscratcher
+        end
+        
     end
 
+    private
     def backscratcher_params
-      params.require(:backscratcher).permit(:name, :description, :price, :sizes)
+        params.require(:backscratcher).permit(:name, :description, :price, :sizes => [])
     end
+
 end
