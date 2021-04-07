@@ -1,12 +1,12 @@
 class BackscratchersController < ApplicationController
   before_action :set_backscratcher, only: %i[ show edit update destroy ]
 
-  # GET /backscratchers or /backscratchers.json
+  # GET /backscratchers
   def index
     @backscratchers = Backscratcher.all
   end
 
-  # GET /backscratchers/1 or /backscratchers/1.json
+  # GET /backscratchers/1
   def show
   end
 
@@ -19,7 +19,7 @@ class BackscratchersController < ApplicationController
   def edit
   end
 
-  # POST /backscratchers or /backscratchers.json
+  # POST /backscratchers
   def create
     @backscratcher = Backscratcher.new(backscratcher_params)
 
@@ -34,7 +34,7 @@ class BackscratchersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /backscratchers/1 or /backscratchers/1.json
+  # PATCH/PUT /backscratchers/1
   def update
     respond_to do |format|
       if @backscratcher.update(backscratcher_params)
@@ -47,7 +47,7 @@ class BackscratchersController < ApplicationController
     end
   end
 
-  # DELETE /backscratchers/1 or /backscratchers/1.json
+  # DELETE /backscratchers/1
   def destroy
     @backscratcher.destroy
     respond_to do |format|
@@ -57,12 +57,10 @@ class BackscratchersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_backscratcher
       @backscratcher = Backscratcher.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def backscratcher_params
       params.require(:backscratcher).permit(:name, :description, :price, :sizes)
     end
