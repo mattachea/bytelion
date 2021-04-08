@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "c3cebdfa-3693-45e0-a309-0a098073bd66",
+		"name": "Backscratchers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"The Blinger\",\n    \"description\": \"Diamonds\",\n    \"price\": \"$343.00\",\n    \"sizes\": [\n      \"L\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://test-dev2222222.us-east-1.elasticbeanstalk.com/backscratchers",
+					"protocol": "http",
+					"host": [
+						"test-dev2222222",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"backscratchers"
+					]
+				},
+				"description": "To run this request\n\n- go to Body tab\n\n- choose raw, then choose JSON from the drop down menu on the right\n\n- enter data in JSON format like  \n\n{\n    \"name\": \"The Gold One\",\n    \"descripton\": \"Gold handle and fancy emeralds make this shine\",\n    \"price\": \"$5999.00\",\n    \"sizes\": [\"XL\", \"L\", \"M\", \"S\"]\n}\n\n- press send"
+			},
+			"response": []
+		},
+		{
+			"name": "read all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test-dev2222222.us-east-1.elasticbeanstalk.com/backscratchers",
+					"protocol": "http",
+					"host": [
+						"test-dev2222222",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"backscratchers"
+					]
+				},
+				"description": "To run this request\n\n- press send"
+			},
+			"response": []
+		},
+		{
+			"name": "delete one",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://test-dev2222222.us-east-1.elasticbeanstalk.com/backscratchers/:id",
+					"protocol": "http",
+					"host": [
+						"test-dev2222222",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"backscratchers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "To run this request\n\n- go to params tab\n\n- in the path variables table, set the value for the key id as the id of the backscratcher to delete\n\n- press send\n"
+			},
+			"response": []
+		},
+		{
+			"name": "update one",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"name\": \"The Gold One\",\n    \"descripton\": \"Gold handle and fancy emeralds make this shine\",\n    \"price\": \"$5999.00\",\n    \"sizes\": [\n      \"XL\",\n      \"L\",\n      \"M\",\n      \"S\"\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://test-dev2222222.us-east-1.elasticbeanstalk.com/backscratchers/:id",
+					"protocol": "http",
+					"host": [
+						"test-dev2222222",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"backscratchers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "To run this request\n\n- go to Params tab\n\n- in the Path Variables table, set the value for the key id as the id of the backscratcher to update\n\n- go to Body tab\n\n- choose raw, then choose JSON from the drop down menu on the right\n\n- enter data in JSON format like  \n\n{\n    \"name\": \"The Gold One\",\n    \"descripton\": \"Gold handle and fancy emeralds make this shine\",\n    \"price\": \"$5999.00\",\n    \"sizes\": [\"XL\", \"L\", \"M\", \"S\"]\n}\n\n- press send"
+			},
+			"response": []
+		},
+		{
+			"name": "read one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test-dev2222222.us-east-1.elasticbeanstalk.com/backscratchers/:id",
+					"protocol": "http",
+					"host": [
+						"test-dev2222222",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"backscratchers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "To run this request\n\n- go to Params tab\n\n- in the Path Variables table, set the value for the key id as the id of the backscratcher to read\n\n- press send"
+			},
+			"response": []
+		}
+	]
+}
