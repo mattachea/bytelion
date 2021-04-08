@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ENDPOINTS
 
-Things you may want to cover:
+- GET /backscratchers
 
-* Ruby version
+- GET /backscratchers/:id
 
-* System dependencies
+- POST /backscratchers
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-

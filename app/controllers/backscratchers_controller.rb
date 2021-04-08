@@ -1,5 +1,7 @@
 class BackscratchersController < ApplicationController
-     def index
+    skip_before_action :verify_authenticity_token
+
+    def index
         @backscratchers = Backscratcher.select(:id, :name, :description, :price, :sizes)
         render json: @backscratchers
     end
@@ -14,6 +16,7 @@ class BackscratchersController < ApplicationController
     end
 
     def create
+
         @backscratcher = Backscratcher.new(backscratcher_params)
 
         if @backscratcher.save
@@ -33,9 +36,9 @@ class BackscratchersController < ApplicationController
         @backscratcher = Backscratcher.find(params[:id])
         if @backscratcher.update(backscratcher_params)
             render json: @backscratcher
-      else
-        render :edit, status: :unprocessable_entity
-      end
+        else
+            render :edit, status: :unprocessable_entity
+        end
     end
     
 
@@ -46,6 +49,8 @@ class BackscratchersController < ApplicationController
         end
         
     end
+
+
 
     private
     def backscratcher_params

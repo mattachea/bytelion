@@ -4,7 +4,7 @@ class CreateBackscratchers < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :description
       t.text :price
-      t.text :sizes, array: true, default:[]
+      t.text :sizes, array:true, default:[]
 
       t.timestamps
     end
