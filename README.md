@@ -47,27 +47,16 @@ For testing, I included the Postman api calls in the file Backscratchers.postman
 }
 ```
 
-2. Read One
+![create1: postman screenshot](./postmanImages/create1.png)
+![create2: postman screenshot](./postmanImages/create2.png)
 
-   - go to Params tab
-
-   - in the Path Variables table, set the value for the key id as the id of the backscratcher to read
-
-   - press send
-
-3. Read All
+2. Read All
 
    - press send
 
-4. Delete One
+![readAll: postman screenshot](./postmanImages/readAll.png)
 
-   - go to params tab
-
-   - in the path variables table, set the value for the key id as the id of the backscratcher to delete
-
-   - press send
-
-5. Update One
+3. Update One
 
    - go to Params tab
 
@@ -89,3 +78,26 @@ For testing, I included the Postman api calls in the file Backscratchers.postman
   "sizes": ["XL", "L", "M", "S"]
 }
 ```
+
+![update1: postman screenshot](./postmanImages/update1.png)
+![update2: postman screenshot](./postmanImages/update2.png)
+
+4. Read One
+
+   - go to Params tab
+
+   - in the Path Variables table, set the value for the key id as the id of the backscratcher to read
+
+   - press send
+
+![readOne: postman screenshot](./postmanImages/readOne.png)
+
+5. Delete
+
+   - go to params tab
+
+   - in the path variables table, set the value for the key id as the id of the backscratcher to delete
+
+   - press send
+
+![delete: postman screenshot](./postmanImages/delete.png)
