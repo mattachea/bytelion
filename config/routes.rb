@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'backscratchers#index'
   get "/backscratchers", to: "backscratchers#index"
   get "/backscratchers/:id", to: "backscratchers#show"
   post "/backscratchers", to: "backscratchers#create"
